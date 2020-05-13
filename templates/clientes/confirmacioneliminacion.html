@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block head_content %}
+    <title>Clientes</title>
+{% endblock%}
+
+{% block container %}
+
+<br>
+<br>
+
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+
+    <form method="post">{% csrf_token %}
+        ¿Estás seguro que deseas borrar el cliente <strong>"{{ object }}"</strong> ?
+        <br>
+        <input type="submit" value="Confirmar" class="btn btn-success" />
+    </form>
+    <br>
+    
+    <a href="{% url "clientes:detail" %}" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp; Regresar</a>              
+
+</div>
+
+
+
+
+{% endblock %}

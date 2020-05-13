@@ -1,0 +1,30 @@
+{% extends 'users/base.html' %}
+
+{% block head_content %}
+    <title>Sign In</title>
+{% endblock head_content %}
+    
+
+
+{% block container %}
+
+
+    {% if form.errors %}
+    <p class="alert alert-danger">Tu usuario y clave no concuerdan, vuelve a intentar</p>        
+    {% endif %}
+
+    <form method="POST" action="{% url "users:login" %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" placeholder="Username" name="username" class="form-control">            
+        </div>
+        
+        <div class="form-group">            
+            <input type="password" placeholder="Password" name="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-5">Sign In</button>
+    </form>
+
+    <p class="mt-4">No tienes una cueta?<a href="{%url "users:signup"%}"> Registrate aqui</a></p>
+{% endblock container %}
+    
