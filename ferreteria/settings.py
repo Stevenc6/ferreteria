@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users',
     'compras',
     'clientes',
+    'productos',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
+CART_SESSION_ID = 'compra'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

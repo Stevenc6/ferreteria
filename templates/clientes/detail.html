@@ -6,8 +6,7 @@
 
 {% block container %}
 
-<br>
-<br>
+
 
 
 
@@ -35,7 +34,7 @@
                 <td>{{ cliente.direccion }}</td>  
                 <td>{{ cliente.telefono }}</td>  
                 {% csrf_token %}
-                <td class="center"><input type="checkbox" name="checkbox"  {%if cliente.estado %}checked{% endif %}/></td>
+                <td class="center"><input type="checkbox" disabled name="checkbox"  {%if cliente.estado %}checked{% endif %}/></td>
                 
                 <td>                                      
                    <a href="{% url "clientes:edit" cliente.id %}" class="btn btn-success"><i class="fas fa-edit"></i></a>

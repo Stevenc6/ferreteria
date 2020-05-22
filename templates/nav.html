@@ -1,46 +1,40 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg fixed-top " id="main-navbar">
-    <div class="container">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+   <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="{% url "feed" %}">
+      <img src="{% static "img/ferreteria.jpg" %}" height="55" width="50" class="d-inline-block align-top"/>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+               <a class="nav-link" href="{% url "clientes:detail" %}">Clientes</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url "productos:detail" %}">Producto</a>
+            </li>
 
-        <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="{% url "feed" %}">
-            <img src="{% static "img/ferreteria.jpg" %}" height="55" width="50" class="d-inline-block align-top"/>
-        </a>
-
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-
-              <li class="nav-item">
-                <a class="nav-link" href="{% url "clientes:detail" %}">Clientes</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'compras:compras_list' %}">Compras</a>
+           </li>
 
 
-    
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Producto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Compras</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Ventas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Inventario</a>
-                  </li>
-
-                
-
-                <form class="form-inline my-2 my-lg-0">
-       
-                    <li class="nav-item nav-icon">
-                        <a href="{% url "users:logout" %}">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </a>
-                    </li>
-                  </form>
-
-            </ul>
-        </div>
-    </div>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Ventas</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Inventario</a>
+            </li>
+         </ul>
+         <form class="form-inline my-2 my-lg-0">
+            <li class="nav-item nav-icon">
+               <a href="{% url "users:logout" %}">
+               <i class="fas fa-sign-out-alt"></i>
+               </a>
+            </li>
+         </form>
+      </div>
+   </div>
 </nav>

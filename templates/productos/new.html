@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block head_content %}
+    <title>Crear nuevo</title>
+{% endblock%}
+
+
+
+
+
+{% block container %}
+
+<div class="container">
+
+
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Descripcion</label>
+            <input type="text" class="form-control {% if form.descripcion.errors %}is-invalid{% endif %}"
+            name="descripcion"
+            placeholder="Descripcion">
+            <div class="invalid-feedback">
+                {% for error in form.descripcion.errors %}{{ error }}{% endfor %}
+            </div> 
+          </div>
+          <div class="form-group col-md-4">
+            <label>Costo</label>
+            <input type="number" class="form-control {% if form.costo.errors %} is-invalid{%  endif %} " 
+            name="costo"
+            placeholder="Costo">
+            <div class="invalid-feedback">
+                {% for error in form.costo.errors %}{{error}}{% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Precio</label>
+                <input type="number" class="form-control" 
+                name="precio"
+                placeholder="Precio">
+              </div>
+              <div class="form-group col-md-4">
+                <label>Existencia</label>
+                <input type="number" readonly value="0" class="form-control" 
+                name="existencia"
+                placeholder="Existencia">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+
+      </form>
+    
+</div>
+
+
+
+{% endblock container %}

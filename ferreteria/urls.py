@@ -24,5 +24,6 @@ urlpatterns = [
     path('',views.welcome, name="feed"),
     path('compras/', include(('compras.urls', 'compras'), namespace='compras')),
     path('clientes/', include(('clientes.urls', 'clientes'), namespace='clientes')),
+    path('productos/', include(('productos.urls', 'productos'), namespace='productos')),
     path('users/', include(('users.urls', 'users'), namespace='users')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
