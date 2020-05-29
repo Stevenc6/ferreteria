@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'ferreteria.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd4shsmi53g1t9j',
+        'USER': 'vceeryzkjhmugn',
+        'PASSWORD': '10d7a14390c46fa3fe3a51a58559997ca0bcc465a349fee7918ed5ac2536c06e',
+        'HOST': 'ec2-18-210-214-86.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
