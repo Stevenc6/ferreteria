@@ -51,7 +51,7 @@
             <td>{{item.estado|yesno:"Activo,Inactivo"}}</td>
             <td>
               <a class="btn btn-warning btn-circle" href="{% url 'compras:compras_edit' item.id %}"><i class="far fa-edit"></i></a>
-              <a class="btn btn-success btn-circle" href="" target="reportes"><i class="fas fa-print"></i></a>
+              
             </td>
           </tr>
           {% endfor %}
